@@ -13,6 +13,12 @@ Resolve hostnames on local networks via mDNS, LLMNR, NetBIOS, and reverse DNS. I
 composer require geeklab/localname
 ```
 
+Then download the IEEE OUI database for MAC vendor lookups:
+
+```bash
+php vendor/geeklab/localname/bin/update-oui.php
+```
+
 ## Quick Start
 
 ```php
