@@ -6,7 +6,7 @@ include __DIR__ . '/../vendor/autoload.php';
 
 use Geeklab\Localname\LocalName;
 
-$ip       = $argv[1] ?? '192.168.12.45';
+$ip       = $argv[1] ?? '192.168.1.2';
 $resolver = LocalName::create();
 
 $result = $resolver->lookup($ip);
