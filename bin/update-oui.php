@@ -3,8 +3,14 @@
 
 declare(strict_types=1);
 
-$dest = dirname(__DIR__) . '/data/oui.csv';
+$dest = $argv[1] ?? dirname(__DIR__) . '/data/oui.csv';
 $url  = 'https://standards-oui.ieee.org/oui/oui.csv';
+
+if (in_array($dest, ['-h', '--help'], true)) {
+    echo "Usage: update-oui [destination]\n";
+    echo "  destination  Path to save oui.csv (default: <package>/data/oui.csv)\n";
+    exit(0);
+}
 
 echo "Downloading OUI database from IEEE...\n";
 

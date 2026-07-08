@@ -72,15 +72,15 @@ foreach ($results as $r) {
 MAC vendor identification requires the IEEE OUI database. Download it with the included script:
 
 ```bash
-php bin/update-oui.php
+vendor/bin/update-oui.php data/oui.csv
 ```
 
-This saves the database to `data/oui.csv`. Without it, `lookup()` still works -- `vendor` will just be `null`.
+This downloads the IEEE OUI database to the path you specify. Without it, `lookup()` still works -- `vendor` will just be `null`.
 
-You can also pass a custom path:
+Then pass the path when creating the resolver:
 
 ```php
-$resolver = LocalName::create('/path/to/oui.csv');
+$resolver = LocalName::create(__DIR__ . '/data/oui.csv');
 ```
 
 ## Running Tests
