@@ -16,7 +16,7 @@ composer require geeklab/localname
 Then download the IEEE OUI database for MAC vendor lookups:
 
 ```bash
-php vendor/geeklab/localname/bin/update-oui.php
+vendor/bin/update-oui.php data/oui.csv
 ```
 
 ## Quick Start
@@ -24,7 +24,7 @@ php vendor/geeklab/localname/bin/update-oui.php
 ```php
 use Geeklab\Localname\LocalName;
 
-$resolver = LocalName::create();
+$resolver = LocalName::create(__DIR__ . '/data/oui.csv');
 $result   = $resolver->lookup('192.168.1.100');
 
 echo $result->ip;       // 192.168.1.100
